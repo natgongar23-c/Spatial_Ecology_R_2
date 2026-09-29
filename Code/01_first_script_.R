@@ -19,4 +19,26 @@ sum(5,10)
 elisa <- c(100, 80, 50, 20, 10)  #an a array of human deaths
 
 plot(matteo, elisa)
+
+#changing the point character
 plot(matteo, elisa, pch=19)
+
+#caracter exaggeration
+plot(matteo, elisa, pch=19, cex=2)
+
+#color
+plot(matteo, elisa, pch=19, cex=2, col="blue")
+
+#changing labels
+plot(matteo, elisa, pch=19, cex=2, col="blue", xlab="mammals", ylab="number of human deapths", cex.axis=2)
+
+#long fuction
+plot(matteo, 
+     elisa, 
+     pch=19, 
+     cex=2, 
+     col="blue", 
+     xlab="mammals", 
+     ylab="number of human deapths", 
+     cex.axis=2,
+     cex.lab=2)
