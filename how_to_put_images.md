@@ -12,4 +12,4 @@ Take an images from the net and drag and drop it inside Markdown:
 <
 ## Creating a folder and linking to the source file 
 
-<img scr="Pics/dji_fly_20241226_054143_0_1735188103432_photo_low_quality.JPG" >
+<img scr="Pics/dji_fly_20241226_054143_0_1735188103432_photo_low_quality.JPG">
