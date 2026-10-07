@@ -22,9 +22,9 @@ bei.extra
 plot(bei.extra)
 
 # Subsetting a dataset:
-#There are two methots to make a subset:
-#first: name of the variable and the $
-#second: 
+# There are two methots to make a subset:
+# first: name of the variable and the $ symbol
+# second: number of the layer and [] for tables, [[]] for map layers
 
 elevation <- bei.extra$elev
 plot(elevation)
