@@ -3,5 +3,18 @@
 #New packeages
 # install.packages("terra")
 # install.packages("sdm")
+
+#check the packages
 library(terra)
+library(sdm)
+
+system.file("external/species.shp" , package="sdm")
+# path to the file
+path <- system.file("external/species.shp" , package="sdm")
+file <- system.file("external/species.shp" , package="sdm")
+
+#
+rana <- vect(path)
+# plotting data
+plot(rana)
 
