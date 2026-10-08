@@ -1,0 +1,7 @@
+# Scrip for modelling the dispersion of individuals of population
+
+#New packeages
+# install.packages("terra")
+# install.packages("sdm")
+library(terra)
+
