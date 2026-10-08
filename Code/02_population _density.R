@@ -60,7 +60,19 @@ par(mfrow=c(2,1))
 plot(elevation)
 plot(densitymap)
 
+#gramatic fail
+dev.off()
 
+# Change colors in our maps:
+cl <- colorRampPalette("blue","green","red")
+cl <- colorRampPalette(c("blue","green","red"))
+#noo, for R this is an array: plot the density map and change its color thanks cl
+plot(densitymap, col=cl)
+# avoid red and blue, search in pantone
+cl <- colorRampPalette(c("magenta1","green","mediumpurple"))
+
+
+cl <- colorRampPalette("blue","green","red")
 
 
 
