@@ -72,7 +72,24 @@ plot(densitymap, col=cl)
 cl <- colorRampPalette(c("magenta1","green","mediumpurple"))
 
 
-cl <- colorRampPalette("blue","green","red")
+cl <- colorRampPalette(c("blue","green","red"))
+plot(densitymap, col=cl)
+
+# Nueances
+cl3 <- colorRampPalette(c("blue","green","red"))(10)
+plot(densitymap, col=cl10)
+
+cl10 <- colorRampPalette(c("blue","green","red"))(10)
+plot(densitymap, col=cl3)
+# ex 
+
+par(mfrow=c(2,1))
+plot(densitymap, cl3)
+plot(densitymap, cl10)
+
+
+
+
 
 
 
