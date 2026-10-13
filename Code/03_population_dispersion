@@ -13,8 +13,40 @@ system.file("external/species.shp" , package="sdm")
 path <- system.file("external/species.shp" , package="sdm")
 file <- system.file("external/species.shp" , package="sdm")
 
-#
+# import the vector data, i can see the info on ?vect
 rana <- vect(path)
+
 # plotting data
 plot(rana)
+
+# looking at coordinates
+coordinates <- geom(rana)
+
+# Subset the dataset extracting presences
+Occurrence == 1
+# this Occurrence != 1 is not equal 1
+presence <- rana[rana$Occurrence == 1]
+
+# exercise: select and assing absence- two options
+absence <- rana[rana$Occurrence == 0]      absence <- rana[rana$Occurrence != 1]
+
+# plot presence
+plot(presence)
+#plot absence
+plot(absent)
+
+# exercise: plot presences and absences with differen colors in the same plot:
+
+points(absence, col="violet", cex=2.5)
+plot(presence, col"blue", cex=2.5)
+points(
+
+
+
+
+
+
+
+
+
 
