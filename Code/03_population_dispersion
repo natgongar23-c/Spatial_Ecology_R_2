@@ -85,13 +85,28 @@ points(presence, cex=2)
 
 temp <- system.file( "external/temperature.asc", package="sdm" )
 tempmap <- rast(temp)
-plot(temp)
+plot(tempmap)
 
 #revisar porq me he saltado cosas
 
 
+# plotting with viridis packages
+plot( elevmap, col=viridis[10] )
+# putting all togather in multiframe
+par(mfrow=c(2,2))
+plot(elevmap, col=inferno[100], main=elevation)
+plot(tempmap, col=inferno[100]), main=
+plot(precmap, col=
+plot(vegemap, col=
 
+#Making a stack
+ drivers <- c(elevmap, tempmap, precmap, vegemap)
+plot(drivers, col=inferno(100) )
 
+# plot a single drivers from the stack
+t <- drivers[[2]]
+plot(t)
+points(presence, cex=2)
 
 
 
