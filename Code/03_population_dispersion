@@ -3,10 +3,38 @@
 #New packeages
 # install.packages("terra")
 # install.packages("sdm")
+install.packages("viridis")
 
 #check the packages
 library(terra)
 library(sdm)
+library(viridis)
+
+ 
+> )
+Error: inesperado ')' en ")"
+> Installing package into ‘C:/Users/ogarc/AppData/Local/R/win-library/4.6’
+Error: unexpected symbol en "Installing package"
+> (as ‘lib’ is unspecified)
+Error: unexpected input en "(as ‘"
+> probando la URL 'https://cran.rediris.es/bin/windows/contrib/4.6/viridis_0.6.5.zip'
+Error: unexpected symbol en "probando la"
+> Content type 'application/zip' length 3014174 bytes (2.9 MB)
+Error: unexpected symbol en "Content type"
+> downloaded 2.9 MB
+Error: unexpected numeric constant en "downloaded 2.9"
+> 
+> package ‘viridis’ successfully unpacked and MD5 sums checked
+Error: unexpected input en "package ‘"
+> 
+> The downloaded binary packages are in
+Error: unexpected symbol en "The downloaded"
+>         C:\Users\ogarc\AppData\Local\Temp\RtmpoNY5J8\downloaded_packages
+Error: unexpected symbol en "        C:\Users"
+> > 
+Error: inesperado '>' en ">"
+> 
+
 
 system.file("external/species.shp" , package="sdm")
 # path to the file
@@ -32,14 +60,34 @@ absence <- rana[rana$Occurrence == 0]      absence <- rana[rana$Occurrence != 1]
 
 # plot presence
 plot(presence)
-#plot absence
+# plot absence
 plot(absent)
 
 # exercise: plot presences and absences with differen colors in the same plot:
 
+
+plot(presence, col="blue", cex=2.5)
 points(absence, col="violet", cex=2.5)
-plot(presence, col"blue", cex=2.5)
-points(
+
+# low the path to the elevation file
+elev <- system.file("external/elevation.asc", packages="sdm")  
+
+# ex: use the rast() to import the data
+elevmap <- rast(elev)
+plot(elevmap)
+
+# changing the colors
+cl <- colorRampPalette(c("cyan","chocolate", green"))
+plot(elevmap, col=cl)
+points(presence, cex=2)
+
+#exercise
+
+temp <- system.file( "external/temperature.asc", package="sdm" )
+tempmap <- rast(temp)
+plot(temp)
+
+#revisar porq me he saltado cosas
 
 
 
