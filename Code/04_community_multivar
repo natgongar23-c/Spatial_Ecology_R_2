@@ -1,0 +1,56 @@
+# code for multivariate anylisis of communities
+# vegan packages will be used for the multivariate part
+library(vegan)
+# using the data inside vegan
+?data
+data(dune)
+
+# loaking inside the data
+dune # hole data set
+
+#looking at a few rows
+?head
+head(dune)
+
+# Principal Component Analysis with vegan
+multipca <- pca(dune)
+multipca
+# Principal Component Analysis without vegan
+multivar <- prcomp(dune)
+
+# looking at the percentage of variance explained by each Principal Component summary(multipca)
+summary(multipca)
+# How much variability is explained by the first two components?
+# proportion of PC1: 0,2947
+# percentage of explained variability by PC!: 29,47%
+# ex: 
+
+# ex: 
+# total explained variability
+totvar= 29,47 + 21,57
+totvar # 51.04 we loose info by compacting 20 dimension into two of courese
+
+# make the final plot
+plot(multipca)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
