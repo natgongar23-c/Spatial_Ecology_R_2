@@ -1,4 +1,4 @@
-# Once we have seen how communities are related to each other in space we can preceed to look how they are related during time
+od# Once we have seen how communities are related to each other in space we can preceed to look how they are related during time
 
 library(overlap)
 # Using the data
@@ -25,7 +25,56 @@ summary(tiguer)
 ?densityPlot
 # density plot of spreading
 densityPlot(tiger$Timecirc)
-# Alternative
+# Alternative method: create the time variable from the tiger dataset and use it 
 tigertime <- Tiger$Timecirc
 densityPlot(tigertime)
+# Alternative 2
+tigertime <- tiger[4]
+densityPlot(tigertime)
+
+# Exercise: select of the rows of the kerinci dataset with the species macaque
+macaque <- kerinci[kerinci$Sps=="macaque",]
+# check 
+head(macaque)
+# make sure only macaque species has beeen selected
+summary(macaque) #lazy beatiful!!
+# ex: densityPlot
+densityPlot(macaque$Timecirc)
+macaquetime <- macaque$Timecirc
+densityPlot(macaquetime)
+
+?overlapPlot
+# overlap the two distributions
+overlapPlot(tigertime,
+            macaquetime,
+            linetype=c(1,3),
+            linecol=c("cyan3","coral"),
+            olapcol="deeppinck"
+            )
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
