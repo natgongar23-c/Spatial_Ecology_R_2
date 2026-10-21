@@ -49,7 +49,7 @@ overlapPlot(tigertime,
             macaquetime,
             linetype=c(1,3),
             linecol=c("cyan3","coral"),
-            olapcol="deeppinck"
+            olapcol="deeppink"
             )
 
           
