@@ -88,6 +88,28 @@ plot(densitymap, cl3)
 plot(densitymap, cl10)
 
 
+# EJER: gorillas
+ elev <- gorillas.extra$elevation
+plot(elev)
+ elev
+
+elev2 <- gorillas.extra[[2]]
+elev2
+enclosing rectangle: [580440, 586000] x [674160, 678730] metres
+plot(elev2)
+plot(gorillas)
+densitymap <- density(gorillas)
+densitymap
+
+plot(densitymap)
+vege <- gorillas.extra$vegetation
+plot(vege)
+
+par( mfrow=c(3,1))
+plot(elev)
+plot(vege)
+plot(densitymap)
+
 
 
 
