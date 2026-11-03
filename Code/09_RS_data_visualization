@@ -1,0 +1,11 @@
+# Code to visualize remote sensing data
+library(imageRy)
+library(terra)
+library(viridis)
+
+# Checking the data
+?im.list()
+im.list()
+
+# importing one layer of satellite image wich 
+b2 <-im.import("sentinel.dolomites.b2.tif") 
