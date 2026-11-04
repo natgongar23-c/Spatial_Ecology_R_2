@@ -1,11 +1,112 @@
 # Code to visualize remote sensing data
 library(imageRy)
 library(terra)
-library(viridis)
-
+library(viridis) # colors in palettes
+# cheking the nm of bands search centinel2 bands
 # Checking the data
 ?im.list()
 im.list()
 
-# importing one layer of satellite image wich 
+# importing one layer of satellite image wich( tofane, cortina) 
 b2 <-im.import("sentinel.dolomites.b2.tif") 
+plot(b2)
+
+# Change the palette
+ plot(b2, col= inferno(100))
+
+# ex: import the green band of centinel and plot it with magma legend
+b3 <- im.import("sentinel.dolomites.b3.tif")
+plot(b3, col=magma(100))
+
+# Make multiframe with one image beside the other
+im.multiframe(1, 2)
+par(mfrow= c(1,2))
+plot(b2, col= inferno(100))
+plot(b3, col=magma(100))
+
+# one on top the other
+im.multiframe(2, 1)
+
+# ex. import the red band palette
+b4 <- im.import("sentinel.dolomites.b4.tif")
+plot(b4, col=cividis(100))
+# near red
+b8 <- im.import("sentinel.dolomites.b8.tif")
+plot(b8)
+# ex. import the near infra redband
+clg <- colorRampPalette(c("chartreuse1", "chartreuse3", "chartreuse4"))(100)
+# ex. builta 4*4 multiframe and plot all of the bands with de default palette
+im.multiframe(2,2)
+par(mfrow= c(2,2))
+plot(b2)
+plot(b3)
+plot(b4)
+plot(b8)
+
+# multiframe and colorRampPalette
+clb <- colorRampPalette(c("blue4", "blue1", "cadetblue1"))(100)
+# do the same for b3-green band
+clg <- colorRampPalette(c("chartreuse1", "chartreuse3", "chartreuse4"))(100)
+# clr
+clr
+#cln
+
+# create a stack of all bands together with a new object called sent considering 
+sent <- c(b2, b3, b4, b8)
+plot(sent)
+
+# reversing colors
+plot( sent, col=magma(100, direction=-1))
+# stack by the imageRy package
+sentinel <- im.import("sentinel.dolomites")
+
+# ex. starting from the stack called sentinel plot only the NIR band
+# original b2 = layer1 in the stack
+# original b3 = layer 2 in the stack
+# b4 = layer 3
+plot(sent[[4]])
+
+# RGB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
