@@ -53,37 +53,78 @@ clr
 
 # create a stack of all bands together with a new object called sent considering 
 sent <- c(b2, b3, b4, b8)
-plot(sent)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+plot(sent, col=mako(100, direction=-1))
 # reversing colors
 plot( sent, col=magma(100, direction=-1))
 # stack by the imageRy package
 sentinel <- im.import("sentinel.dolomites")
 
 # ex. starting from the stack called sentinel plot only the NIR band
-# original b2 = layer1 in the stack
-# original b3 = layer 2 in the stack
-# b4 = layer 3
+# original b2 = layer1 in the stack = blue band
+# original b3 = layer 2 in the stack = green band
+# b4 = layer 3 = red band
+# b8 = layer 4 = NIR
 plot(sent[[4]])
 
 # RGB
+?im.plotRGB
+sentinel <- c(b2, b3, b4, b8) # no sé porq no me deja hacer con la versión rapida)
+
+# natural color
+im.plotRGB(sentinel, r=3, g=2, b=1, title="Natural color image")
+
+# False color image( putting NIR on top the red, plat become red)
+im.plotRGB(sentinel, r=4, g=2, b=1, title="False color image")
+
+# multiframe
+par(mfrow= c(1,2))
+im.plotRGB(sentinel, r=3, g=2, b=1, title="Natural color image")
+p1 <- im.plotRGB(sentinel, r=4, g=2, b=1, title="False color image")
+
+# ex. NIR ontop the green
+p2 <- im.plotRGB(sentinel, r=3, g=4, b=1, title="ex color image")
+# i can put the visible colors wherever i want beacuase is the NIR the one how is visible
+# ex. put the NIR ontop the blue of the RGB
+p3 <- im.plotRGB(sentinel, r=3, g=2, b=4, title="ex2 color image")
+
+#Making a multiframe with the four RGB plots
+par(mfrow= c(2,2))
+im.plotRGB(sentinel, r=4, g=2, b=1, title="False color image")
+im.plotRGB(sentinel, r=3, g=4, b=1, title="ex color image")
+im.plotRGB(sentinel, r=3, g=2, b=4, title="ex2 color image")
+# or put
+par(mfrow= c(2,2))
+p1
+p2
+p3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
