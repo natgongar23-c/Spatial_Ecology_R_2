@@ -55,6 +55,23 @@ clr
 sent <- c(b2, b3, b4, b8)
 plot(sent)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # reversing colors
 plot( sent, col=magma(100, direction=-1))
 # stack by the imageRy package
